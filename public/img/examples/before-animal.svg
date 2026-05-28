@@ -1,0 +1,32 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 300" width="400" height="300">
+  <defs>
+    <linearGradient id="bga" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#a8e063"/>
+      <stop offset="1" stop-color="#56ab2f"/>
+    </linearGradient>
+  </defs>
+  <!-- Outdoor scene the AI removes -->
+  <rect width="400" height="300" fill="url(#bga)"/>
+  <circle cx="60" cy="55" r="34" fill="#fff8d6" opacity=".8"/>
+  <path d="M0 235 Q100 205 200 235 T400 235 V300 H0 Z" fill="#3f8f25" opacity=".5"/>
+  <circle cx="320" cy="80" r="50" fill="#ffffff" opacity=".18"/>
+  <ellipse cx="200" cy="294" rx="90" ry="14" fill="#000000" opacity=".12"/>
+  <!-- Identical subject -->
+  <g>
+    <ellipse cx="200" cy="252" rx="74" ry="48" fill="#f4a261"/>
+    <path d="M150 118 L138 58 L196 108 Z" fill="#f4a261"/>
+    <path d="M250 118 L262 58 L204 108 Z" fill="#f4a261"/>
+    <path d="M158 110 L151 74 L186 106 Z" fill="#e76f51"/>
+    <path d="M242 110 L249 74 L214 106 Z" fill="#e76f51"/>
+    <circle cx="200" cy="158" r="60" fill="#f4a261"/>
+    <ellipse cx="180" cy="152" rx="8" ry="12" fill="#264653"/>
+    <ellipse cx="220" cy="152" rx="8" ry="12" fill="#264653"/>
+    <path d="M192 174 L208 174 L200 184 Z" fill="#e76f51"/>
+    <path d="M200 184 Q190 196 178 192" stroke="#264653" stroke-width="2.5" fill="none" stroke-linecap="round"/>
+    <path d="M200 184 Q210 196 222 192" stroke="#264653" stroke-width="2.5" fill="none" stroke-linecap="round"/>
+    <line x1="150" y1="170" x2="108" y2="162" stroke="#ffffff" stroke-width="2.5" stroke-linecap="round"/>
+    <line x1="150" y1="178" x2="110" y2="182" stroke="#ffffff" stroke-width="2.5" stroke-linecap="round"/>
+    <line x1="250" y1="170" x2="292" y2="162" stroke="#ffffff" stroke-width="2.5" stroke-linecap="round"/>
+    <line x1="250" y1="178" x2="290" y2="182" stroke="#ffffff" stroke-width="2.5" stroke-linecap="round"/>
+  </g>
+</svg>

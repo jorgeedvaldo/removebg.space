@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 300" width="400" height="300">
+  <!-- Subject: portrait bust (transparent background) -->
+  <g>
+    <path d="M118 300 C118 232 150 206 200 206 C250 206 282 232 282 300 Z" fill="#3a86ff"/>
+    <path d="M118 300 C118 232 150 206 200 206 L200 300 Z" fill="#2f6fe0" opacity=".35"/>
+    <rect x="184" y="170" width="32" height="48" rx="14" fill="#e8b08e"/>
+    <circle cx="200" cy="138" r="56" fill="#f1c19c"/>
+    <path d="M143 140 C143 92 160 72 200 72 C240 72 257 92 257 140 C252 120 238 108 200 108 C164 108 150 120 143 140 Z" fill="#5b3a29"/>
+    <circle cx="181" cy="138" r="5.5" fill="#3b2a1a"/>
+    <circle cx="219" cy="138" r="5.5" fill="#3b2a1a"/>
+    <path d="M185 162 Q200 175 215 162" stroke="#b5715a" stroke-width="4" fill="none" stroke-linecap="round"/>
+  </g>
+</svg>
