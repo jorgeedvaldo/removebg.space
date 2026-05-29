@@ -8,7 +8,6 @@
     <meta name="theme-color" content="#2563EB">
 
     {{-- Analytics placeholder — replace G-XXXXXXXXXX with your own Measurement ID --}}
-    {{--
     <!-- Google tag (gtag.js) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-LXSR8R77XT"></script>
     <script>
@@ -18,7 +17,6 @@
 
     gtag('config', 'G-LXSR8R77XT');
     </script>
-    --}}
 
     {{-- SEO Meta --}}
     <title>@yield('title', __('messages.meta_title'))</title>
