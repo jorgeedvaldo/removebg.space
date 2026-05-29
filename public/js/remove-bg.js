@@ -212,6 +212,10 @@
         var msgEl = $('bgErrorMessage');
         if (msgEl) msgEl.textContent = msg || t('error_msg');
         hide('bgProgressArea');
+        hide('bgResultSection');
+        // The error area lives inside the preview section, so that must be
+        // visible too — otherwise the whole panel would render empty.
+        show('bgPreviewSection');
         show('bgErrorArea');
     }
 

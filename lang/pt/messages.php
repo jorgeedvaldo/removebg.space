@@ -16,7 +16,7 @@ return [
 
     // Hero
     'hero_title' => 'Compressor de Imagens Online',
-    'hero_subtitle' => 'Comprima suas imagens <strong>JPG, PNG, GIF, WebP, SVG, BMP, TIFF e ICO</strong> gratuitamente.<br>Processamento 100% no navegador &mdash; suas imagens <strong>nunca saem do seu computador</strong>.',
+    'hero_subtitle' => 'Comprima suas imagens <strong>JPG, PNG, GIF, WebP, SVG, BMP, TIFF e ICO</strong> gratuitamente.<br>Processamento 100% no navegador — suas imagens <strong>nunca saem do seu computador</strong>.',
     'badge_secure' => '100% Seguro',
     'badge_fast' => 'Ultra Rápido',
     'badge_free' => '100% Grátis',
@@ -25,7 +25,7 @@ return [
     'tool_title' => 'Ferramenta de Compressão',
     'upload_title' => 'Arraste e solte suas imagens aqui',
     'upload_subtitle' => 'ou clique para selecionar arquivos',
-    'upload_formats' => 'Suporta: JPG, PNG, GIF, WebP, SVG, BMP, TIFF, ICO &bull; Máximo: 50MB por imagem',
+    'upload_formats' => 'Suporta: JPG, PNG, GIF, WebP, SVG, BMP, TIFF, ICO • Máximo: 50MB por imagem',
     'quality_title' => 'Nível de Compressão',
     'quality_high' => 'Alta Qualidade',
     'quality_high_desc' => 'Compressão leve',
@@ -230,13 +230,13 @@ return [
 
     // Hero
     'bg_hero_title'    => 'Removedor de Fundo com IA',
-    'bg_hero_subtitle' => 'Remova o fundo das suas imagens <strong>JPG, PNG e WebP</strong> instantaneamente, de graça.<br>A IA roda 100% no seu navegador &mdash; suas imagens <strong>nunca saem do seu dispositivo</strong>.',
+    'bg_hero_subtitle' => 'Remova o fundo das suas imagens <strong>JPG, PNG e WebP</strong> instantaneamente, de graça.<br>A IA roda 100% no seu navegador — suas imagens <strong>nunca saem do seu dispositivo</strong>.',
 
     // Tool UI
     'bg_tool_title'       => 'Ferramenta de Remoção de Fundo',
     'bg_upload_title'     => 'Arraste e solte sua imagem aqui',
     'bg_upload_subtitle'  => 'ou clique para selecionar arquivo',
-    'bg_upload_formats'   => 'Suporta: JPG, PNG, WebP &bull; Máx: 20MB',
+    'bg_upload_formats'   => 'Suporta: JPG, PNG, WebP • Máx: 20MB',
     'bg_btn_remove'       => 'Remover Fundo',
     'bg_btn_new_image'    => 'Nova Imagem',
     'bg_btn_download'     => 'Baixar PNG',
@@ -345,13 +345,13 @@ return [
     'nav_faq' => 'Perguntas',
 
     'hero_title' => 'Remover o Fundo da Imagem',
-    'hero_subtitle' => 'Solte uma imagem e receba um <strong>PNG transparente</strong> em segundos.<br>A IA roda 100% no seu navegador &mdash; suas fotos <strong>nunca saem do seu dispositivo</strong>.',
+    'hero_subtitle' => 'Solte uma imagem e receba um <strong>PNG transparente</strong> em segundos.<br>A IA roda 100% no seu navegador — suas fotos <strong>nunca saem do seu dispositivo</strong>.',
 
     'badge_instant' => 'Instantâneo',
     'badge_free' => '100% Grátis',
     'badge_private' => '100% Privado',
     'badge_no_watermark' => 'Sem Marca d\'Água',
-    'hero_trust' => 'Sem upload &bull; Sem cadastro &bull; Sem marca d\'água &bull; Imagens ilimitadas &bull; Grátis para sempre',
+    'hero_trust' => 'Sem upload • Sem cadastro • Sem marca d\'água • Imagens ilimitadas • Grátis para sempre',
 
     'examples_title' => 'Antes e Depois',
     'examples_subtitle' => 'Veja como o RemoveBG recorta o objeto e deixa o fundo transparente.',
