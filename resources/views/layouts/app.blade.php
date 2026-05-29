@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="theme-color" content="#3a86ff">
+    <meta name="theme-color" content="#2563EB">
 
     {{-- Analytics placeholder — replace G-XXXXXXXXXX with your own Measurement ID --}}
     {{--
@@ -62,8 +62,11 @@
     {{-- Sitemap --}}
     <link rel="sitemap" type="application/xml" title="Sitemap" href="{{ url('/sitemap.xml') }}">
 
-    {{-- Favicon --}}
-    <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}">
+    {{-- Favicon / App icons --}}
+    <link rel="icon" type="image/svg+xml" href="{{ asset('favicon.svg') }}">
+    <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}" sizes="any">
+    <link rel="apple-touch-icon" sizes="180x180" href="{{ asset('img/apple-touch-icon.png') }}">
+    <link rel="manifest" href="{{ asset('site.webmanifest') }}">
 
     {{-- Bootstrap 3.3.7 CSS --}}
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
