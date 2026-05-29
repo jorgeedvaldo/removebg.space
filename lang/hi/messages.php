@@ -16,7 +16,7 @@ return [
 
     // Hero
     'hero_title' => 'ऑनलाइन इमेज कंप्रेसर',
-    'hero_subtitle' => 'अपनी <strong>JPG, PNG, GIF, WebP, SVG, BMP, TIFF और ICO</strong> इमेज मुफ्त में कंप्रेस करें।<br>100% ब्राउज़र प्रोसेसिंग &mdash; आपकी इमेज <strong>कभी आपके कंप्यूटर से बाहर नहीं जातीं</strong>।',
+    'hero_subtitle' => 'अपनी <strong>JPG, PNG, GIF, WebP, SVG, BMP, TIFF और ICO</strong> इमेज मुफ्त में कंप्रेस करें।<br>100% ब्राउज़र प्रोसेसिंग — आपकी इमेज <strong>कभी आपके कंप्यूटर से बाहर नहीं जातीं</strong>।',
     'badge_secure' => '100% सुरक्षित',
     'badge_fast' => 'अल्ट्रा फास्ट',
     'badge_free' => '100% मुफ्त',
@@ -25,7 +25,7 @@ return [
     'tool_title' => 'कंप्रेशन टूल',
     'upload_title' => 'अपनी इमेज यहाँ ड्रैग और ड्रॉप करें',
     'upload_subtitle' => 'या फाइल चुनने के लिए क्लिक करें',
-    'upload_formats' => 'सपोर्ट: JPG, PNG, GIF, WebP, SVG, BMP, TIFF, ICO &bull; अधिकतम: प्रति इमेज 50MB',
+    'upload_formats' => 'सपोर्ट: JPG, PNG, GIF, WebP, SVG, BMP, TIFF, ICO • अधिकतम: प्रति इमेज 50MB',
     'quality_title' => 'कंप्रेशन लेवल',
     'quality_high' => 'उच्च गुणवत्ता',
     'quality_high_desc' => 'हल्का कंप्रेशन',
@@ -225,11 +225,11 @@ return [
     'bg_og_description'   => 'AI से अपनी तस्वीरों का बैकग्राउंड बिल्कुल मुफ़्त हटाएं। 100% ब्राउज़र प्रोसेसिंग, आपकी तस्वीरें कभी आपके डिवाइस से नहीं जातीं।',
     'nav_bg_remove'       => 'बैकग्राउंड हटाएं',
     'bg_hero_title'       => 'AI बैकग्राउंड रिमूवर',
-    'bg_hero_subtitle'    => 'अपनी <strong>JPG, PNG और WebP</strong> तस्वीरों का बैकग्राउंड तुरंत, मुफ़्त में हटाएं।<br>AI 100% आपके ब्राउज़र में चलता है &mdash; आपकी तस्वीरें <strong>कभी आपके डिवाइस से नहीं जातीं</strong>।',
+    'bg_hero_subtitle'    => 'अपनी <strong>JPG, PNG और WebP</strong> तस्वीरों का बैकग्राउंड तुरंत, मुफ़्त में हटाएं।<br>AI 100% आपके ब्राउज़र में चलता है — आपकी तस्वीरें <strong>कभी आपके डिवाइस से नहीं जातीं</strong>।',
     'bg_tool_title'       => 'बैकग्राउंड हटाने का टूल',
     'bg_upload_title'     => 'अपनी तस्वीर यहाँ खींचें और छोड़ें',
     'bg_upload_subtitle'  => 'या फ़ाइल चुनने के लिए क्लिक करें',
-    'bg_upload_formats'   => 'समर्थित: JPG, PNG, WebP &bull; अधिकतम: 20MB',
+    'bg_upload_formats'   => 'समर्थित: JPG, PNG, WebP • अधिकतम: 20MB',
     'bg_btn_remove'       => 'बैकग्राउंड हटाएं',
     'bg_btn_new_image'    => 'नई तस्वीर',
     'bg_btn_download'     => 'PNG डाउनलोड करें',
@@ -326,13 +326,13 @@ return [
     'nav_faq' => 'सामान्य प्रश्न',
 
     'hero_title' => 'इमेज का बैकग्राउंड हटाएँ',
-    'hero_subtitle' => 'एक इमेज डालें और सेकंडों में साफ़ <strong>ट्रांसपेरेंट PNG</strong> पाएँ।<br>AI 100% आपके ब्राउज़र में चलता है &mdash; आपकी फ़ोटो <strong>कभी आपके डिवाइस से बाहर नहीं जाती</strong>।',
+    'hero_subtitle' => 'एक इमेज डालें और सेकंडों में साफ़ <strong>ट्रांसपेरेंट PNG</strong> पाएँ।<br>AI 100% आपके ब्राउज़र में चलता है — आपकी फ़ोटो <strong>कभी आपके डिवाइस से बाहर नहीं जाती</strong>।',
 
     'badge_instant' => 'तुरंत',
     'badge_free' => '100% मुफ़्त',
     'badge_private' => '100% निजी',
     'badge_no_watermark' => 'कोई वॉटरमार्क नहीं',
-    'hero_trust' => 'कोई अपलोड नहीं &bull; कोई साइन-अप नहीं &bull; कोई वॉटरमार्क नहीं &bull; असीमित इमेज &bull; हमेशा मुफ़्त',
+    'hero_trust' => 'कोई अपलोड नहीं • कोई साइन-अप नहीं • कोई वॉटरमार्क नहीं • असीमित इमेज • हमेशा मुफ़्त',
 
     'examples_title' => 'पहले और बाद में',
     'examples_subtitle' => 'देखें कि RemoveBG कैसे विषय को काटकर बैकग्राउंड को ट्रांसपेरेंट बना देता है।',

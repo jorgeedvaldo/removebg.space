@@ -16,7 +16,7 @@ return [
 
     // Hero
     'hero_title' => 'Compresseur d\'Images en Ligne',
-    'hero_subtitle' => 'Compressez vos images <strong>JPG, PNG, GIF, WebP, SVG, BMP, TIFF et ICO</strong> gratuitement.<br>Traitement 100% dans le navigateur &mdash; vos images <strong>ne quittent jamais votre ordinateur</strong>.',
+    'hero_subtitle' => 'Compressez vos images <strong>JPG, PNG, GIF, WebP, SVG, BMP, TIFF et ICO</strong> gratuitement.<br>Traitement 100% dans le navigateur — vos images <strong>ne quittent jamais votre ordinateur</strong>.',
     'badge_secure' => '100% Sécurisé',
     'badge_fast' => 'Ultra Rapide',
     'badge_free' => '100% Gratuit',
@@ -25,7 +25,7 @@ return [
     'tool_title' => 'Outil de Compression',
     'upload_title' => 'Glissez et déposez vos images ici',
     'upload_subtitle' => 'ou cliquez pour sélectionner des fichiers',
-    'upload_formats' => 'Supporte : JPG, PNG, GIF, WebP, SVG, BMP, TIFF, ICO &bull; Max : 50Mo par image',
+    'upload_formats' => 'Supporte : JPG, PNG, GIF, WebP, SVG, BMP, TIFF, ICO • Max : 50Mo par image',
     'quality_title' => 'Niveau de Compression',
     'quality_high' => 'Haute Qualité',
     'quality_high_desc' => 'Compression légère',
@@ -225,11 +225,11 @@ return [
     'bg_og_description'   => 'Supprimez l\'arrière-plan de vos images gratuitement avec l\'IA. Traitement 100% dans le navigateur, vos images ne quittent jamais votre appareil.',
     'nav_bg_remove'       => 'Supprimer Fond',
     'bg_hero_title'       => 'Suppression d\'Arrière-plan par IA',
-    'bg_hero_subtitle'    => 'Supprimez l\'arrière-plan de vos images <strong>JPG, PNG et WebP</strong> instantanément, gratuitement.<br>L\'IA fonctionne 100% dans votre navigateur &mdash; vos images <strong>ne quittent jamais votre appareil</strong>.',
+    'bg_hero_subtitle'    => 'Supprimez l\'arrière-plan de vos images <strong>JPG, PNG et WebP</strong> instantanément, gratuitement.<br>L\'IA fonctionne 100% dans votre navigateur — vos images <strong>ne quittent jamais votre appareil</strong>.',
     'bg_tool_title'       => 'Outil de Suppression d\'Arrière-plan',
     'bg_upload_title'     => 'Glissez-déposez votre image ici',
     'bg_upload_subtitle'  => 'ou cliquez pour sélectionner un fichier',
-    'bg_upload_formats'   => 'Supporte : JPG, PNG, WebP &bull; Max : 20 Mo',
+    'bg_upload_formats'   => 'Supporte : JPG, PNG, WebP • Max : 20 Mo',
     'bg_btn_remove'       => 'Supprimer l\'Arrière-plan',
     'bg_btn_new_image'    => 'Nouvelle Image',
     'bg_btn_download'     => 'Télécharger PNG',
@@ -326,13 +326,13 @@ return [
     'nav_faq' => 'FAQ',
 
     'hero_title' => 'Supprimer l\'Arrière-plan',
-    'hero_subtitle' => 'Déposez une image et obtenez un <strong>PNG transparent</strong> en quelques secondes.<br>L\'IA s\'exécute 100% dans votre navigateur &mdash; vos photos <strong>ne quittent jamais votre appareil</strong>.',
+    'hero_subtitle' => 'Déposez une image et obtenez un <strong>PNG transparent</strong> en quelques secondes.<br>L\'IA s\'exécute 100% dans votre navigateur — vos photos <strong>ne quittent jamais votre appareil</strong>.',
 
     'badge_instant' => 'Instantané',
     'badge_free' => '100% Gratuit',
     'badge_private' => '100% Privé',
     'badge_no_watermark' => 'Sans Filigrane',
-    'hero_trust' => 'Sans téléversement &bull; Sans inscription &bull; Sans filigrane &bull; Images illimitées &bull; Gratuit pour toujours',
+    'hero_trust' => 'Sans téléversement • Sans inscription • Sans filigrane • Images illimitées • Gratuit pour toujours',
 
     'examples_title' => 'Avant et Après',
     'examples_subtitle' => 'Découvrez comment RemoveBG détoure le sujet et laisse un arrière-plan transparent.',

@@ -16,7 +16,7 @@ return [
 
     // Hero
     'hero_title' => 'Online Image Compressor',
-    'hero_subtitle' => 'Compress your <strong>JPG, PNG, GIF, WebP, SVG, BMP, TIFF and ICO</strong> images for free.<br>100% browser processing &mdash; your images <strong>never leave your computer</strong>.',
+    'hero_subtitle' => 'Compress your <strong>JPG, PNG, GIF, WebP, SVG, BMP, TIFF and ICO</strong> images for free.<br>100% browser processing — your images <strong>never leave your computer</strong>.',
     'badge_secure' => '100% Secure',
     'badge_fast' => 'Ultra Fast',
     'badge_free' => '100% Free',
@@ -25,7 +25,7 @@ return [
     'tool_title' => 'Compression Tool',
     'upload_title' => 'Drag and drop your images here',
     'upload_subtitle' => 'or click to select files',
-    'upload_formats' => 'Supports: JPG, PNG, GIF, WebP, SVG, BMP, TIFF, ICO &bull; Max: 50MB per image',
+    'upload_formats' => 'Supports: JPG, PNG, GIF, WebP, SVG, BMP, TIFF, ICO • Max: 50MB per image',
     'quality_title' => 'Compression Level',
     'quality_high' => 'High Quality',
     'quality_high_desc' => 'Light compression',
@@ -230,13 +230,13 @@ return [
 
     // Hero
     'bg_hero_title'    => 'AI Background Remover',
-    'bg_hero_subtitle' => 'Remove backgrounds from your <strong>JPG, PNG and WebP</strong> images instantly, for free.<br>AI runs 100% in your browser &mdash; your images <strong>never leave your device</strong>.',
+    'bg_hero_subtitle' => 'Remove backgrounds from your <strong>JPG, PNG and WebP</strong> images instantly, for free.<br>AI runs 100% in your browser — your images <strong>never leave your device</strong>.',
 
     // Tool UI
     'bg_tool_title'       => 'Background Removal Tool',
     'bg_upload_title'     => 'Drag and drop your image here',
     'bg_upload_subtitle'  => 'or click to select file',
-    'bg_upload_formats'   => 'Supports: JPG, PNG, WebP &bull; Max: 20MB',
+    'bg_upload_formats'   => 'Supports: JPG, PNG, WebP • Max: 20MB',
     'bg_btn_remove'       => 'Remove Background',
     'bg_btn_new_image'    => 'New Image',
     'bg_btn_download'     => 'Download PNG',
@@ -345,20 +345,20 @@ return [
     'nav_faq' => 'FAQ',
 
     'hero_title' => 'Remove Image Background',
-    'hero_subtitle' => 'Drop an image and get a clean <strong>transparent PNG</strong> in seconds.<br>AI runs 100% in your browser &mdash; your photos <strong>never leave your device</strong>.',
+    'hero_subtitle' => 'Drop an image and get a clean <strong>transparent PNG</strong> in seconds.<br>AI runs 100% in your browser — your photos <strong>never leave your device</strong>.',
 
     'badge_instant' => 'Instant',
     'badge_free' => '100% Free',
     'badge_private' => '100% Private',
     'badge_no_watermark' => 'No Watermark',
-    'hero_trust' => 'No upload &bull; No sign-up &bull; No watermark &bull; Unlimited images &bull; Free forever',
+    'hero_trust' => 'No upload • No sign-up • No watermark • Unlimited images • Free forever',
 
-    'examples_title' => 'Before &amp; After',
+    'examples_title' => 'Before & After',
     'examples_subtitle' => 'See how RemoveBG cuts out the subject and leaves a transparent background.',
     'examples_drag' => 'Drag the slider to compare before and after',
     'example_person' => 'Portrait',
     'example_product' => 'Product Photo',
-    'example_animal' => 'Pet &amp; Animal',
+    'example_animal' => 'Pet & Animal',
 
     'step1_title' => 'Upload Image',
     'step1_desc' => 'Drag and drop or click to select a JPG, PNG or WebP image (up to 20MB).',
