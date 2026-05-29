@@ -12,8 +12,9 @@ class BackgroundRemovalTest extends TestCase
     {
         parent::setUp();
 
-        // Use a deterministic stub processor instead of the real AI worker.
+        // Use the CLI driver with a deterministic stub instead of the real AI.
         config([
+            'bgremoval.driver' => 'process',
             'bgremoval.processor' => 'php ' . base_path('tests/stubs/stub-processor.php') . ' {input} {output}',
             'bgremoval.sweep_lottery' => 1000000, // effectively disable random sweeps in tests
         ]);
@@ -55,6 +56,37 @@ class BackgroundRemovalTest extends TestCase
         $png = $this->get($url);
         $png->assertStatus(200);
         $this->assertSame('image/png', $png->headers->get('Content-Type'));
+    }
+
+    public function test_http_driver_calls_the_node_microservice(): void
+    {
+        // 1x1 transparent PNG bytes the fake worker will "return".
+        $png = base64_decode('iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNk+M8AAAMBAQDJ/pXkAAAAAElFTkSuQmCC');
+
+        config([
+            'bgremoval.driver' => 'http',
+            'bgremoval.http_endpoint' => 'http://worker.test/remove',
+            'bgremoval.http_secret' => 'shh',
+        ]);
+
+        \Illuminate\Support\Facades\Http::fake([
+            'worker.test/*' => \Illuminate\Support\Facades\Http::response($png, 200, ['Content-Type' => 'image/png']),
+        ]);
+
+        $response = $this->post('/remove-background', [
+            'image' => UploadedFile::fake()->image('photo.png', 120, 120),
+        ]);
+
+        $response->assertStatus(200)->assertJson(['ok' => true]);
+
+        \Illuminate\Support\Facades\Http::assertSent(function ($request) {
+            return $request->url() === 'http://worker.test/remove'
+                && $request->hasHeader('X-Worker-Secret', 'shh');
+        });
+
+        $this->get($response->json('url'))
+            ->assertStatus(200)
+            ->assertHeader('Content-Type', 'image/png');
     }
 
     public function test_it_rejects_non_image_uploads(): void

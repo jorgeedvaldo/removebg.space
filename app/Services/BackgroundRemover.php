@@ -2,6 +2,7 @@
 
 namespace App\Services;
 
+use Illuminate\Support\Facades\Http;
 use RuntimeException;
 use Symfony\Component\Process\Exception\ProcessTimedOutException;
 use Symfony\Component\Process\Process;
@@ -40,11 +41,58 @@ class BackgroundRemover
     }
 
     /**
-     * Run the processor: read $inputPath, write a transparent PNG to $outputPath.
+     * Run the configured driver: read $inputPath, write a transparent PNG to
+     * $outputPath.
      *
-     * @throws RuntimeException when the processor fails or produces no output.
+     * @throws RuntimeException when the removal fails or produces no output.
      */
     public function remove(string $inputPath, string $outputPath): void
+    {
+        if (config('bgremoval.driver') === 'http') {
+            $this->removeViaHttp($inputPath, $outputPath);
+        } else {
+            $this->removeViaProcess($inputPath, $outputPath);
+        }
+
+        if (! is_file($outputPath) || filesize($outputPath) === 0) {
+            throw new RuntimeException('Processor produced no output.');
+        }
+    }
+
+    /**
+     * HTTP driver — POST the raw image to a persistent Node micro-service and
+     * store the returned PNG. Ideal for cPanel "Setup Node.js App" (Passenger).
+     */
+    private function removeViaHttp(string $inputPath, string $outputPath): void
+    {
+        $endpoint = (string) config('bgremoval.http_endpoint');
+        $secret   = (string) config('bgremoval.http_secret');
+
+        $request = Http::timeout((int) config('bgremoval.timeout', 120))
+            ->withBody(file_get_contents($inputPath), 'application/octet-stream')
+            ->withHeaders(['Accept' => 'image/png']);
+
+        if ($secret !== '') {
+            $request = $request->withHeaders(['X-Worker-Secret' => $secret]);
+        }
+
+        try {
+            $response = $request->post($endpoint);
+        } catch (\Throwable $e) {
+            throw new RuntimeException('Worker request failed: ' . $e->getMessage(), 0, $e);
+        }
+
+        if (! $response->successful()) {
+            throw new RuntimeException('Worker returned HTTP ' . $response->status());
+        }
+
+        file_put_contents($outputPath, $response->body());
+    }
+
+    /**
+     * Process driver — spawn a CLI command per request (needs exec/proc_open).
+     */
+    private function removeViaProcess(string $inputPath, string $outputPath): void
     {
         $template = (string) config('bgremoval.processor');
 
@@ -66,10 +114,6 @@ class BackgroundRemover
         if (! $process->isSuccessful()) {
             $err = trim($process->getErrorOutput() ?: $process->getOutput());
             throw new RuntimeException('Processor failed: ' . ($err !== '' ? $err : 'unknown error'));
-        }
-
-        if (! is_file($outputPath) || filesize($outputPath) === 0) {
-            throw new RuntimeException('Processor produced no output.');
         }
     }
 

@@ -82,6 +82,35 @@ Then open <http://localhost:8000> (it redirects to `/en`).
 > The first removal downloads the AI model **to the server** (cached afterwards).
 > No model is ever downloaded by visitors.
 
+## Deploying on cPanel
+
+On cPanel the AI runs as a **persistent Node app** (the `http` driver) so the
+model loads once and stays warm. The Laravel app calls it over HTTP.
+
+1. **Upload the code** and point the PHP app's document root at `public/`.
+   Run `composer install` (Terminal) or upload `vendor/`.
+2. **Create the Node app** — *Setup Node.js App* → Create:
+   - Application root: `removebg.space` (your project folder)
+   - Application startup file: `scripts/remove-bg-server.cjs`
+   - Add an environment variable `WORKER_SECRET` (any random string).
+   - Click **Run NPM Install**, then **Start**. Note the URL it exposes
+     (e.g. `https://removebg.space/bgworker`) — `/health` should return JSON.
+3. **Point Laravel at it** — in `.env`:
+   ```dotenv
+   BG_REMOVAL_DRIVER=http
+   BG_REMOVAL_HTTP_ENDPOINT=https://removebg.space/bgworker/remove
+   BG_REMOVAL_HTTP_SECRET=the-same-WORKER_SECRET
+   ```
+   Then `php artisan config:clear`.
+4. **Schedule cleanup** — *Cron Jobs* → add (every minute):
+   ```
+   * * * * * cd /home/USER/removebg.space && php artisan schedule:run >> /dev/null 2>&1
+   ```
+
+Prefer not to run a Node service? Use the `process` driver with the **absolute**
+node path from *Setup Node.js App* (`BG_REMOVAL_PROCESSOR`), provided
+`exec`/`proc_open` are enabled (PHP Tweaks). The `http` driver is recommended.
+
 ## Adding a language
 
 1. Add the locale code to `SetLocale::LOCALES`.

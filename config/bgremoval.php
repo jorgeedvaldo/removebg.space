@@ -29,15 +29,38 @@ return [
     'timeout' => (int) env('BG_REMOVAL_TIMEOUT', 120),
 
     /*
+    | Driver used to run the AI:
+    |   'http'    -> call a persistent Node micro-service over HTTP (recommended
+    |               on cPanel "Setup Node.js App" / Passenger; model stays warm)
+    |   'process' -> spawn a CLI command per request (needs exec/proc_open)
+    */
+    'driver' => env('BG_REMOVAL_DRIVER', 'http'),
+
+    /*
+    |--------------------------------------------------------------------------
+    | HTTP driver — Node micro-service (scripts/remove-bg-server.cjs)
+    |--------------------------------------------------------------------------
+    */
+    // Full URL of the worker's /remove endpoint, e.g.
+    //   https://removebg.space/bgworker/remove   (cPanel Node app on a path)
+    //   http://127.0.0.1:3000/remove             (standalone)
+    'http_endpoint' => env('BG_REMOVAL_HTTP_ENDPOINT', 'http://127.0.0.1:3000/remove'),
+
+    // Shared secret sent as the X-Worker-Secret header (must match the worker).
+    'http_secret' => env('BG_REMOVAL_HTTP_SECRET', ''),
+
+    /*
+    |--------------------------------------------------------------------------
+    | Process driver — CLI command
+    |--------------------------------------------------------------------------
     | The command that performs the removal. Two placeholders are substituted
     | with shell-escaped absolute paths:
     |   {input}  -> uploaded source image
     |   {output} -> destination PNG (must be written by the processor)
     |
-    | Default: a bundled Node worker using @imgly/background-removal-node
-    | (same model as the previous in-browser version, now cached server-side).
-    | You can swap this for any CLI, e.g. Python rembg:
-    |   BG_REMOVAL_PROCESSOR="rembg i {input} {output}"
+    | NOTE: on cPanel, use the ABSOLUTE node path from "Setup Node.js App", e.g.
+    |   /home/USER/nodevenv/removebg.space/20/bin/node
+    | You can also swap in Python rembg: "rembg i {input} {output}"
     */
     'processor' => env(
         'BG_REMOVAL_PROCESSOR',
