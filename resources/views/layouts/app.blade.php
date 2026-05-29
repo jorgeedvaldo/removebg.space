@@ -9,11 +9,14 @@
 
     {{-- Analytics placeholder — replace G-XXXXXXXXXX with your own Measurement ID --}}
     {{--
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-LXSR8R77XT"></script>
     <script>
-        window.dataLayer = window.dataLayer || [];
-        function gtag() { dataLayer.push(arguments); }
-        gtag('js', new Date()); gtag('config', 'G-XXXXXXXXXX');
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'G-LXSR8R77XT');
     </script>
     --}}
 
