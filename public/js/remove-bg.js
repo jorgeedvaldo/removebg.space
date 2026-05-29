@@ -1,60 +1,30 @@
 /* =====================================================================
    RemoveBG — AI Background Remover (removebg.space)
-   Loaded via esm.sh (resolves onnxruntime-web peer dep automatically)
-   window.bgRemoval is set by the <script type="module"> in the view.
+   Server-side processing: the image is uploaded, the background is removed
+   on the server, and the resulting transparent PNG is returned as a URL.
+   The client no longer downloads any AI model.
+   Config is provided by window.BG_REMOVE_CFG (endpoint, csrf, lang).
    ===================================================================== */
 (function () {
     'use strict';
 
     var currentFile = null;
-    var resultBlob  = null;
-    var libReady    = false;
+    var resultUrl   = null;
+
+    var CFG  = window.BG_REMOVE_CFG || {};
+    var LANG = CFG.lang || {};
 
     /* ---- helpers ---- */
     function $(id) { return document.getElementById(id); }
     function show(id) { var el = $(id); if (el) el.style.display = 'block'; }
     function hide(id) { var el = $(id); if (el) el.style.display = 'none'; }
-    function t(key) { return (window.BG_REMOVE_LANG && window.BG_REMOVE_LANG[key]) || key; }
-
-    function getLib() {
-        return (window.bgRemoval && typeof window.bgRemoval.removeBackground === 'function')
-            ? window.bgRemoval : null;
-    }
-
-    /* ---- library loading state ---- */
-    function onLibReady() {
-        libReady = true;
-        var btn = $('btnRemoveBg');
-        if (btn) {
-            btn.disabled = false;
-            btn.classList.remove('btn-disabled-loading');
-        }
-        // If the user already clicked while loading, start now
-        if (window._bgPendingProcess) {
-            window._bgPendingProcess = false;
-            startProcessing();
-        }
-    }
+    function t(key) { return LANG[key] || key; }
 
     /* ---- init ---- */
     function init() {
         var uploadArea = $('bgUploadArea');
         var fileInput  = $('bgFileInput');
         if (!uploadArea || !fileInput) return;
-
-        // Disable remove button until lib ready
-        var btnRemove = $('btnRemoveBg');
-        if (btnRemove) {
-            btnRemove.disabled = true;
-            btnRemove.classList.add('btn-disabled-loading');
-            btnRemove.title = t('loading_model') || 'Loading AI...';
-        }
-
-        // Listen for library ready event (dispatched by module script)
-        document.addEventListener('bgRemovalReady', onLibReady, { once: true });
-
-        // If library already loaded (cached module), enable immediately
-        if (getLib()) onLibReady();
 
         uploadArea.addEventListener('click', function () { fileInput.click(); });
 
@@ -75,6 +45,7 @@
             if (e.dataTransfer.files && e.dataTransfer.files[0]) handleFile(e.dataTransfer.files[0]);
         });
 
+        var btnRemove   = $('btnRemoveBg');
         var btnNew      = $('btnNewImage');
         var btnDownload = $('btnDownloadResult');
         var btnRetry    = $('btnRetryBg');
@@ -97,7 +68,7 @@
             return;
         }
         currentFile = file;
-        resultBlob  = null;
+        resultUrl   = null;
         hide('bgErrorArea');
 
         var reader = new FileReader();
@@ -124,53 +95,60 @@
         return (bytes / 1048576).toFixed(2) + ' MB';
     }
 
-    /* ---- processing ---- */
+    /* ---- processing (server-side) ---- */
     function startProcessing() {
         if (!currentFile) return;
-
-        var lib = getLib();
-        if (!lib) {
-            // Library still loading — show progress and wait
-            hide('bgPreviewSection');
-            show('bgProgressArea');
-            setProgress(2, t('loading_model'));
-            window._bgPendingProcess = true;
-            return;
-        }
 
         hide('bgPreviewSection');
         hide('bgResultSection');
         hide('bgErrorArea');
         show('bgProgressArea');
-        setProgress(0, t('loading_model'));
+        setProgress(0, t('uploading'));
 
-        var config = {
-            // Default publicPath points to staticimgly.com CDN (imgly's own CDN)
-            model: 'small',
-            output: {
-                format: 'image/png',
-                type:   'foreground'
-            },
-            progress: function (key, current, total) {
-                var pct = (total > 0) ? Math.min(Math.round((current / total) * 100), 99) : 0;
-                var msg = (key && key.indexOf('fetch') !== -1)
-                    ? t('loading_model')
-                    : t('processing_image');
-                setProgress(pct, msg);
+        var form = new FormData();
+        form.append('image', currentFile);
+
+        var xhr = new XMLHttpRequest();
+        xhr.open('POST', CFG.endpoint, true);
+        xhr.responseType = 'json';
+        if (CFG.csrf) xhr.setRequestHeader('X-CSRF-TOKEN', CFG.csrf);
+        xhr.setRequestHeader('Accept', 'application/json');
+
+        xhr.upload.onprogress = function (e) {
+            if (e.lengthComputable) {
+                var pct = Math.round((e.loaded / e.total) * 90);
+                setProgress(pct, t('uploading'));
             }
         };
+        // Upload finished — server is now processing (no granular progress).
+        xhr.upload.onload = function () {
+            setProgress(95, t('processing_image'));
+        };
 
-        lib.removeBackground(currentFile, config)
-            .then(function (blob) {
-                resultBlob = blob;
+        xhr.onload = function () {
+            var data = xhr.response;
+            if (typeof data === 'string') {
+                try { data = JSON.parse(data); } catch (e) { data = null; }
+            }
+            if (xhr.status >= 200 && xhr.status < 300 && data && data.ok && data.url) {
+                resultUrl = data.url;
                 setProgress(100, t('done_title'));
-                setTimeout(showResult, 350);
-            })
-            .catch(function (err) {
-                console.error('[RemoveBG]', err);
-                hide('bgProgressArea');
-                showError(t('error_msg'));
-            });
+                setTimeout(showResult, 250);
+            } else {
+                handleFailure(data);
+            }
+        };
+        xhr.onerror   = function () { handleFailure(null); };
+        xhr.ontimeout = function () { handleFailure(null); };
+
+        xhr.send(form);
+    }
+
+    function handleFailure(data) {
+        var msg = t('error_msg');
+        if (data && data.message === 'processing_failed') msg = t('error_msg');
+        console.error('[RemoveBG] processing failed', data);
+        showError(msg);
     }
 
     function retryProcessing() {
@@ -187,24 +165,33 @@
 
     /* ---- result ---- */
     function showResult() {
-        var url = URL.createObjectURL(resultBlob);
         var img = $('bgResultPreview');
-        if (img) img.src = url;
+        if (img) img.src = resultUrl;
         hide('bgProgressArea');
         show('bgResultSection');
     }
 
     function downloadResult() {
-        if (!resultBlob || !currentFile) return;
+        if (!resultUrl || !currentFile) return;
         var baseName = currentFile.name.replace(/\.[^/.]+$/, '');
-        var url  = URL.createObjectURL(resultBlob);
-        var link = document.createElement('a');
-        link.href     = url;
-        link.download = baseName + '-no-bg.png';
-        document.body.appendChild(link);
-        link.click();
-        document.body.removeChild(link);
-        setTimeout(function () { URL.revokeObjectURL(url); }, 2000);
+
+        // Fetch the result and trigger a download with a friendly filename.
+        fetch(resultUrl)
+            .then(function (r) { return r.blob(); })
+            .then(function (blob) {
+                var url  = URL.createObjectURL(blob);
+                var link = document.createElement('a');
+                link.href     = url;
+                link.download = baseName + '-no-bg.png';
+                document.body.appendChild(link);
+                link.click();
+                document.body.removeChild(link);
+                setTimeout(function () { URL.revokeObjectURL(url); }, 2000);
+            })
+            .catch(function () {
+                // Fallback: open the result in a new tab.
+                window.open(resultUrl, '_blank');
+            });
     }
 
     /* ---- error ---- */
@@ -221,19 +208,16 @@
 
     /* ---- reset ---- */
     function resetTool() {
-        if (resultBlob) {
-            var old = $('bgResultPreview');
-            if (old && old.src && old.src.startsWith('blob:')) URL.revokeObjectURL(old.src);
-        }
         currentFile = null;
-        resultBlob  = null;
-        window._bgPendingProcess = false;
+        resultUrl   = null;
 
         var fi = $('bgFileInput');
         if (fi) fi.value = '';
 
         var oi = $('bgOriginalPreview');
         if (oi) oi.src = '';
+        var ri = $('bgResultPreview');
+        if (ri) ri.src = '';
 
         hide('bgPreviewSection');
         hide('bgProgressArea');

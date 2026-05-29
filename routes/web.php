@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Artisan;
 use App\Http\Controllers\PageController;
+use App\Http\Controllers\BackgroundRemovalController;
 use App\Http\Middleware\SetLocale;
 
 /*
@@ -27,6 +28,10 @@ Route::group([
     Route::get('/feed.xml', [PageController::class, 'feed'])->name('feed');
     Route::get('/sitemap.xml', [PageController::class, 'sitemap'])->name('sitemap');
 });
+
+// Background removal API (server-side processing; locale-independent)
+Route::post('/remove-background', [BackgroundRemovalController::class, 'process'])->name('bg.process');
+Route::get('/r/{id}', [BackgroundRemovalController::class, 'result'])->name('bg.result');
 
 // Global sitemap index (no locale prefix)
 Route::get('/sitemap.xml', [PageController::class, 'sitemapIndex'])->name('sitemap.index');

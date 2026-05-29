@@ -15,7 +15,8 @@ class Kernel extends ConsoleKernel
      */
     protected function schedule(Schedule $schedule)
     {
-        // $schedule->command('inspire')->hourly();
+        // Delete expired background-removal uploads/results (30-min retention).
+        $schedule->command('bg:cleanup')->everyFiveMinutes()->withoutOverlapping();
     }
 
     /**

@@ -385,4 +385,53 @@ return [
     'rss_item2_desc' => '了解浏览器内 AI 工具如何将任何照片变成干净的透明 PNG。',
     'rss_item3_title' => '为什么在浏览器中去背景能保护您的隐私',
     'rss_item3_desc' => '了解为什么在浏览器本地处理图片能让您的照片完全私密。',
+
+    // ── Server-side processing overrides ────────────────────────────────
+    'meta_description' => 'RemoveBG 使用 AI 在几秒内去除任何图片的背景——100% 免费，无需注册、无水印。图片经安全处理，并在 30 分钟后自动删除。',
+    'og_description' => '使用 AI 即时去除图片背景。永久免费、无水印、无需注册。图片将在 30 分钟后从我们的服务器删除。',
+
+    'hero_subtitle' => '拖入一张图片，几秒内即可获得干净的<strong>透明 PNG</strong>。<br>在我们的服务器上安全处理，并在 <strong>30 分钟后删除</strong>。',
+    'badge_private' => '30 分钟后删除',
+    'hero_trust' => '无需注册 • 无水印 • 不限张数 • 图片 30 分钟后删除 • 永久免费',
+    'feature_3' => '图片在 30 分钟后自动删除',
+
+    'bg_uploading' => '正在上传图片...',
+    'bg_privacy_notice' => '在我们的服务器上安全处理，并在 30 分钟后永久删除。',
+
+    'step2_title' => 'AI 去除背景',
+    'step2_desc' => '我们的 AI 会识别主体，并在我们的安全服务器上几秒内去除背景。',
+
+    'faq_q2' => '我的图片会被上传到服务器吗？',
+    'faq_a2' => '会。为了去除背景，您的图片会通过加密（HTTPS）连接上传并在我们的服务器上处理。图片绝不会被分享或用于训练，上传的图片和处理结果都会在 30 分钟后被永久删除。',
+    'faq_q4' => '我的图片会保存多久？',
+    'faq_a4' => '上传的图片和生成的 PNG 仅临时存储，并在处理完成 30 分钟后自动且永久地从我们的服务器删除。',
+
+    'article_security_good1' => '通过加密的 HTTPS 连接发送',
+    'article_security_good2' => '仅用于去除背景的处理',
+    'article_security_good3' => '绝不与第三方分享',
+    'article_security_good4' => '绝不用于训练 AI 模型',
+    'article_security_good5' => '30 分钟后自动删除',
+
+    'bg_article_intro' => '在一个每个“免费”工具都隐藏付费墙、水印或数据收集的世界里，<strong>RemoveBG</strong> 是真正<strong>完全免费</strong>的去背景工具——没有隐藏费用、无需注册、没有水印。您的图片经过安全处理，并在 30 分钟后自动删除。',
+    'bg_article_what_p1' => '大多数去背景工具每月收费 5 至 30 美元，限制每天只能免费处理几张图片，或在免费结果上添加水印。<strong>RemoveBG 完全没有这些限制。</strong>',
+    'bg_article_what_p2' => '我们的工具使用运行在服务器上的<strong>先进 AI 图像分割技术</strong>。您上传一张图片，背景会在几秒内被去除，文件在 30 分钟后被永久删除——无需账户、不收费、无水印。',
+    'bg_article_quote' => '“一个真正免费、没有水印的去背景工具——并且会在 30 分钟后自动删除您的图片。”',
+    'bg_article_how_p2' => '该模型在我们的服务器上以优化的神经网络推理运行，因此您可以在几秒内获得专业效果，无需安装任何东西，也无需在设备上下载庞大的 AI 模型。',
+    'bg_article_privacy_p1' => '您的图片仅为去除背景而通过安全加密连接上传。我们绝不出售、分享或将您的图片用于训练 AI，也不会保留它们：原图和结果都会在<strong>处理完成 30 分钟后自动且永久删除</strong>。',
+    'bg_article_privacy_p2' => '这种短暂保存、默认删除的做法意味着您的照片绝不会被存档在我们的服务器上。RemoveBG 只保留必要的内容，且只在必要的时间内保留。',
+
+    'bg_comparison_no_upload' => '图片自动删除（30 分钟）',
+
+    // ── Server-model copy corrections ───────────────────────────────────
+    'footer_desc' => '免费的 AI 去背景工具。上传一张图片，几秒内获得透明 PNG——图片在 30 分钟后自动删除。',
+    'footer_tech' => '服务器端安全处理。您的图片在 30 分钟后被删除。',
+    'jsonld_app_description' => '免费 AI 去背景工具。几秒内去除 JPG、PNG 和 WebP 图片的背景——无水印；图片在 30 分钟后自动删除。',
+    'bg_how_subtitle' => '3 个简单步骤去除背景：',
+    'rss_description' => '使用 AI 免费去除图片背景。无水印、无需注册；图片在 30 分钟后自动删除。',
+    'rss_item1_title' => '如何使用 AI 免费去除图片背景',
+    'rss_item1_desc' => '几秒内去除照片背景的完整指南——无水印、无需注册。',
+    'rss_item2_title' => '一键透明 PNG：RemoveBG 工具',
+    'rss_item2_desc' => '用我们的免费 AI 工具，几秒内将任何照片变成干净的透明 PNG。',
+    'rss_item3_title' => '您的隐私：图片在 30 分钟后删除',
+    'rss_item3_desc' => 'RemoveBG 如何安全处理图片，并在 30 分钟后自动删除。',
 ];

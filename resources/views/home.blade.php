@@ -155,7 +155,7 @@
                             <h3>{{ __('messages.bg_upload_title') }}</h3>
                             <p>{{ __('messages.bg_upload_subtitle') }}</p>
                             <p class="text-muted"><small>{!! __('messages.bg_upload_formats') !!}</small></p>
-                            <p class="bg-notice"><i class="fa fa-info-circle"></i> {{ __('messages.bg_first_load') }}</p>
+                            <p class="bg-notice"><i class="fa fa-lock"></i> {{ __('messages.bg_privacy_notice') }}</p>
                             <input type="file" id="bgFileInput" accept="image/jpeg,image/jpg,image/png,image/webp" class="hidden">
                         </div>
 
@@ -202,9 +202,9 @@
                             <div class="progress progress-striped active">
                                 <div class="progress-bar progress-bar-primary" id="bgProgressBar" style="width:0%">0%</div>
                             </div>
-                            <p class="bg-progress-text" id="bgProgressText">{{ __('messages.bg_loading_model') }}</p>
+                            <p class="bg-progress-text" id="bgProgressText">{{ __('messages.bg_uploading') }}</p>
                             <p class="bg-first-load-notice">
-                                <i class="fa fa-info-circle"></i> {{ __('messages.bg_first_load') }}
+                                <i class="fa fa-lock"></i> {{ __('messages.bg_privacy_notice') }}
                             </p>
                         </div>
 
@@ -629,39 +629,25 @@
 
 @section('scripts')
 {{--
-    @imgly/background-removal v1.7.0
-    Loaded via esm.sh which resolves the onnxruntime-web peer dependency.
-    The AI model (ONNX) + WASM run 100% in the browser — nothing is uploaded.
+    Background removal runs on the server (see BackgroundRemovalController).
+    The browser only uploads the image and displays the returned PNG — no AI
+    model is downloaded on the client. Uploads are deleted after 30 minutes.
 --}}
 <script>
-    window.BG_REMOVE_LANG = {
-        invalid_format:   @json(__('messages.bg_invalid_format')),
-        loading_model:    @json(__('messages.bg_loading_model')),
-        processing_image: @json(__('messages.bg_processing_image')),
-        done_title:       @json(__('messages.bg_done_title')),
-        error_msg:        @json(__('messages.bg_error_msg')),
-        error_title:      @json(__('messages.bg_error_title'))
+    window.BG_REMOVE_CFG = {
+        endpoint: @json(route('bg.process')),
+        csrf:     @json(csrf_token()),
+        lang: {
+            invalid_format:   @json(__('messages.bg_invalid_format')),
+            uploading:        @json(__('messages.bg_uploading')),
+            processing_image: @json(__('messages.bg_processing_image')),
+            done_title:       @json(__('messages.bg_done_title')),
+            error_msg:        @json(__('messages.bg_error_msg')),
+            error_title:      @json(__('messages.bg_error_title'))
+        }
     };
 </script>
 <script src="{{ asset('js/remove-bg.js') }}"></script>
-<script type="module">
-    /*
-     * esm.sh bundles @imgly/background-removal + its onnxruntime-web peer dep
-     * into a single browser-compatible ES module — no build step needed.
-     */
-    try {
-        const { removeBackground } = await import('https://esm.sh/@imgly/background-removal@1.7.0');
-        window.bgRemoval = { removeBackground };
-        document.dispatchEvent(new Event('bgRemovalReady'));
-    } catch (err) {
-        console.error('[RemoveBG] Failed to load background-removal library:', err);
-        const btn = document.getElementById('btnRemoveBg');
-        if (btn) {
-            btn.disabled = true;
-            btn.title = 'AI library failed to load. Please refresh.';
-        }
-    }
-</script>
 <script>
     // Wire up extra buttons + before/after sliders once DOM is ready
     (function () {

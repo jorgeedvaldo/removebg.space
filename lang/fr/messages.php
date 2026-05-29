@@ -385,4 +385,53 @@ return [
     'rss_item2_desc' => 'Découvrez comment l\'outil d\'IA dans le navigateur transforme n\'importe quelle photo en un PNG transparent net.',
     'rss_item3_title' => 'Pourquoi le Détourage dans le Navigateur Protège Votre Vie Privée',
     'rss_item3_desc' => 'Comprenez pourquoi le traitement local des images dans le navigateur garde vos photos totalement privées.',
+
+    // ── Server-side processing overrides ────────────────────────────────
+    'meta_description' => 'RemoveBG supprime l\'arrière-plan de n\'importe quelle image en quelques secondes grâce à l\'IA — 100% gratuit, sans inscription et sans filigrane. Les images sont traitées en toute sécurité et supprimées automatiquement au bout de 30 minutes.',
+    'og_description' => 'Supprimez l\'arrière-plan de vos images instantanément avec l\'IA. Gratuit pour toujours, sans filigrane et sans inscription. Les images sont supprimées de nos serveurs au bout de 30 minutes.',
+
+    'hero_subtitle' => 'Déposez une image et obtenez un <strong>PNG transparent</strong> en quelques secondes.<br>Traité en toute sécurité sur nos serveurs et <strong>supprimé au bout de 30 minutes</strong>.',
+    'badge_private' => 'Supprimé en 30 min',
+    'hero_trust' => 'Sans inscription • Sans filigrane • Images illimitées • Images supprimées au bout de 30 min • Gratuit pour toujours',
+    'feature_3' => 'Images supprimées automatiquement au bout de 30 minutes',
+
+    'bg_uploading' => 'Téléversement de l\'image...',
+    'bg_privacy_notice' => 'Traité en toute sécurité sur notre serveur et supprimé définitivement au bout de 30 minutes.',
+
+    'step2_title' => 'L\'IA Supprime le Fond',
+    'step2_desc' => 'Notre IA détecte le sujet et supprime l\'arrière-plan sur notre serveur sécurisé en quelques secondes.',
+
+    'faq_q2' => 'Mes images sont-elles envoyées sur un serveur ?',
+    'faq_a2' => 'Oui. Pour supprimer l\'arrière-plan, votre image est envoyée via une connexion chiffrée (HTTPS) et traitée sur notre serveur. Elle n\'est jamais partagée ni utilisée pour l\'entraînement, et l\'envoi comme le résultat sont définitivement supprimés au bout de 30 minutes.',
+    'faq_q4' => 'Combien de temps mes images sont-elles conservées ?',
+    'faq_a4' => 'L\'image envoyée et le PNG obtenu ne sont stockés que temporairement et sont automatiquement et définitivement supprimés de nos serveurs 30 minutes après le traitement.',
+
+    'article_security_good1' => 'Envoyée via une connexion HTTPS chiffrée',
+    'article_security_good2' => 'Traitée uniquement pour supprimer le fond',
+    'article_security_good3' => 'Jamais partagée avec des tiers',
+    'article_security_good4' => 'Jamais utilisée pour entraîner des modèles d\'IA',
+    'article_security_good5' => 'Supprimée automatiquement au bout de 30 minutes',
+
+    'bg_article_intro' => 'Dans un monde où chaque outil « gratuit » cache des paywalls, des filigranes ou de la collecte de données, <strong>RemoveBG</strong> se distingue comme un outil de détourage <strong>réellement gratuit</strong> — sans coûts cachés, sans inscription et sans filigrane. Vos images sont traitées en toute sécurité et supprimées automatiquement au bout de 30 minutes.',
+    'bg_article_what_p1' => 'La plupart des outils de détourage facturent entre 5 et 30 USD par mois, vous limitent à quelques images gratuites par jour ou ajoutent un filigrane aux résultats gratuits. <strong>RemoveBG ne fait rien de tout cela.</strong>',
+    'bg_article_what_p2' => 'Notre outil utilise une <strong>segmentation d\'image par IA de pointe</strong> exécutée sur nos serveurs. Vous envoyez une image, l\'arrière-plan est supprimé en quelques secondes et le fichier est définitivement supprimé au bout de 30 minutes — sans compte, sans frais, sans filigrane.',
+    'bg_article_quote' => '« Un outil de détourage vraiment gratuit, sans filigrane — et qui supprime vos images automatiquement au bout de 30 minutes. »',
+    'bg_article_how_p2' => 'Le modèle s\'exécute sur nos serveurs avec une inférence de réseau de neurones optimisée, vous obtenez donc des résultats professionnels en quelques secondes sans rien installer ni télécharger un gros modèle d\'IA sur votre appareil.',
+    'bg_article_privacy_p1' => 'Votre image est envoyée via une connexion sécurisée et chiffrée uniquement pour en supprimer l\'arrière-plan. Nous ne vendons, ne partageons ni n\'utilisons jamais vos images pour entraîner une IA, et nous ne les conservons pas : l\'original comme le résultat sont <strong>automatiquement et définitivement supprimés 30 minutes après le traitement</strong>.',
+    'bg_article_privacy_p2' => 'Cette approche éphémère, avec suppression par défaut, signifie que vos photos ne sont jamais archivées sur nos serveurs. RemoveBG ne conserve que le nécessaire, et seulement le temps nécessaire.',
+
+    'bg_comparison_no_upload' => 'Images supprimées (30 min)',
+
+    // ── Server-model copy corrections ───────────────────────────────────
+    'footer_desc' => 'Un outil de détourage par IA gratuit. Envoyez une image et obtenez un PNG transparent en quelques secondes — les images sont supprimées automatiquement au bout de 30 minutes.',
+    'footer_tech' => 'Traitement sécurisé côté serveur. Vos images sont supprimées au bout de 30 minutes.',
+    'jsonld_app_description' => 'Détourage d\'image par IA gratuit. Supprimez l\'arrière-plan des images JPG, PNG et WebP en quelques secondes — sans filigrane ; images supprimées au bout de 30 minutes.',
+    'bg_how_subtitle' => 'Supprimez l\'arrière-plan en 3 étapes simples :',
+    'rss_description' => 'Supprimez l\'arrière-plan de vos images gratuitement avec l\'IA. Sans filigrane, sans inscription ; images supprimées au bout de 30 minutes.',
+    'rss_item1_title' => 'Comment Supprimer l\'Arrière-plan d\'une Image Gratuitement avec l\'IA',
+    'rss_item1_desc' => 'Un guide complet pour détourer vos photos en quelques secondes — sans filigrane et sans inscription.',
+    'rss_item2_title' => 'PNG Transparent en Un Clic : l\'Outil RemoveBG',
+    'rss_item2_desc' => 'Transformez n\'importe quelle photo en un PNG transparent net en quelques secondes avec notre outil d\'IA gratuit.',
+    'rss_item3_title' => 'Votre Vie Privée : Images Supprimées au Bout de 30 Minutes',
+    'rss_item3_desc' => 'Comment RemoveBG traite les images en toute sécurité et les supprime automatiquement au bout de 30 minutes.',
 ];

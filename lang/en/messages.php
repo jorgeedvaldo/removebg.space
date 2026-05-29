@@ -404,4 +404,53 @@ return [
     'rss_item2_desc' => 'Discover how the in-browser AI tool turns any photo into a clean transparent PNG.',
     'rss_item3_title' => 'Why In-Browser Background Removal Protects Your Privacy',
     'rss_item3_desc' => 'Learn why processing images locally in your browser keeps your photos completely private.',
+
+    // ── Server-side processing overrides ────────────────────────────────
+    'meta_description' => 'RemoveBG removes the background from any image in seconds using AI — 100% free, no sign-up, no watermark. Images are processed securely and automatically deleted after 30 minutes.',
+    'og_description' => 'Remove image backgrounds instantly with AI. Free forever, no watermark, no registration. Images are auto-deleted from our servers after 30 minutes.',
+
+    'hero_subtitle' => 'Drop an image and get a clean <strong>transparent PNG</strong> in seconds.<br>Processed securely on our servers and <strong>deleted after 30 minutes</strong>.',
+    'badge_private' => 'Auto-Deleted',
+    'hero_trust' => 'No sign-up • No watermark • Unlimited images • Images deleted after 30 min • Free forever',
+    'feature_3' => 'Images auto-deleted after 30 minutes',
+
+    'bg_uploading' => 'Uploading image...',
+    'bg_privacy_notice' => 'Processed securely on our server and permanently deleted after 30 minutes.',
+
+    'step2_title' => 'AI Removes Background',
+    'step2_desc' => 'Our AI detects the subject and removes the background on our secure server in seconds.',
+
+    'faq_q2' => 'Are my images uploaded to a server?',
+    'faq_a2' => 'Yes. To remove the background, your image is uploaded over an encrypted (HTTPS) connection and processed on our server. It is never shared or used for training, and both the upload and the result are permanently deleted after 30 minutes.',
+    'faq_q4' => 'How long are my images kept?',
+    'faq_a4' => 'Your uploaded image and the resulting PNG are stored only temporarily and are automatically and permanently deleted from our servers 30 minutes after processing.',
+
+    'article_security_good1' => 'Sent over an encrypted HTTPS connection',
+    'article_security_good2' => 'Processed only to remove the background',
+    'article_security_good3' => 'Never shared with third parties',
+    'article_security_good4' => 'Never used to train AI models',
+    'article_security_good5' => 'Automatically deleted after 30 minutes',
+
+    'bg_article_intro' => 'In a world where every "free" tool hides paywalls, watermarks, or data harvesting, <strong>RemoveBG</strong> stands out as a <strong>truly free background removal tool</strong> — no hidden costs, no registration, and no watermarks. Your images are processed securely and deleted automatically after 30 minutes.',
+    'bg_article_what_p1' => 'Most background removal tools charge between $5–$30 per month, limit you to a few free images per day, or add watermarks to free results. <strong>RemoveBG does none of these things.</strong>',
+    'bg_article_what_p2' => 'Our tool uses <strong>state-of-the-art AI segmentation</strong> running on our servers. You upload an image, the background is removed in seconds, and the file is permanently deleted after 30 minutes — no account, no cost, no watermark.',
+    'bg_article_quote' => '"A background remover that is genuinely free, with no watermark — and that deletes your images automatically after 30 minutes."',
+    'bg_article_how_p2' => 'The model runs on our servers using optimized neural-network inference, so you get professional results in seconds without installing anything or downloading a large AI model to your device.',
+    'bg_article_privacy_p1' => 'Your image is uploaded over a secure, encrypted connection only to remove its background. We never sell, share, or use your images to train AI, and we do not keep them: both the original and the result are <strong>automatically and permanently deleted 30 minutes after processing</strong>.',
+    'bg_article_privacy_p2' => 'This short-lived, delete-by-default approach means your photos are never archived on our servers. RemoveBG keeps only what it needs, only for as long as it needs it.',
+
+    'bg_comparison_no_upload' => 'Images auto-deleted (30 min)',
+
+    // ── Server-model copy corrections ───────────────────────────────────
+    'footer_desc' => 'A free AI background remover. Upload an image, get a transparent PNG in seconds — images are automatically deleted after 30 minutes.',
+    'footer_tech' => 'Secure server-side processing. Your images are deleted after 30 minutes.',
+    'jsonld_app_description' => 'Free AI background remover. Remove the background from JPG, PNG and WebP images in seconds — no watermark; images auto-deleted after 30 minutes.',
+    'bg_how_subtitle' => 'Remove backgrounds in 3 simple steps:',
+    'rss_description' => 'Remove backgrounds from images for free with AI. No watermark, no registration; images auto-deleted after 30 minutes.',
+    'rss_item1_title' => 'How to Remove an Image Background for Free with AI',
+    'rss_item1_desc' => 'A complete guide to removing backgrounds from photos in seconds — no watermark, no sign-up.',
+    'rss_item2_title' => 'Transparent PNG in One Click: The RemoveBG Tool',
+    'rss_item2_desc' => 'Turn any photo into a clean transparent PNG in seconds with our free AI tool.',
+    'rss_item3_title' => 'Your Privacy: Images Deleted After 30 Minutes',
+    'rss_item3_desc' => 'How RemoveBG processes images securely and deletes them automatically after 30 minutes.',
 ];

@@ -385,4 +385,53 @@ return [
     'rss_item2_desc' => 'Descubre cómo la herramienta de IA en el navegador convierte cualquier foto en un PNG transparente limpio.',
     'rss_item3_title' => 'Por Qué Quitar el Fondo en el Navegador Protege tu Privacidad',
     'rss_item3_desc' => 'Entiende por qué procesar imágenes localmente en el navegador mantiene tus fotos totalmente privadas.',
+
+    // ── Server-side processing overrides ────────────────────────────────
+    'meta_description' => 'RemoveBG quita el fondo de cualquier imagen en segundos con IA — 100% gratis, sin registro y sin marca de agua. Las imágenes se procesan de forma segura y se eliminan automáticamente tras 30 minutos.',
+    'og_description' => 'Quita el fondo de tus imágenes al instante con IA. Gratis para siempre, sin marca de agua y sin registro. Las imágenes se eliminan de nuestros servidores tras 30 minutos.',
+
+    'hero_subtitle' => 'Suelta una imagen y obtén un <strong>PNG transparente</strong> en segundos.<br>Procesado de forma segura en nuestros servidores y <strong>eliminado tras 30 minutos</strong>.',
+    'badge_private' => 'Eliminado en 30 min',
+    'hero_trust' => 'Sin registro • Sin marca de agua • Imágenes ilimitadas • Imágenes eliminadas tras 30 min • Gratis para siempre',
+    'feature_3' => 'Imágenes eliminadas automáticamente tras 30 minutos',
+
+    'bg_uploading' => 'Subiendo imagen...',
+    'bg_privacy_notice' => 'Procesado de forma segura en nuestro servidor y eliminado permanentemente tras 30 minutos.',
+
+    'step2_title' => 'La IA Quita el Fondo',
+    'step2_desc' => 'Nuestra IA detecta el sujeto y quita el fondo en nuestro servidor seguro en segundos.',
+
+    'faq_q2' => '¿Se suben mis imágenes a un servidor?',
+    'faq_a2' => 'Sí. Para quitar el fondo, tu imagen se sube por una conexión cifrada (HTTPS) y se procesa en nuestro servidor. Nunca se comparte ni se usa para entrenamiento, y tanto la imagen subida como el resultado se eliminan permanentemente tras 30 minutos.',
+    'faq_q4' => '¿Cuánto tiempo se conservan mis imágenes?',
+    'faq_a4' => 'La imagen subida y el PNG resultante se almacenan solo de forma temporal y se eliminan automática y permanentemente de nuestros servidores 30 minutos después del procesamiento.',
+
+    'article_security_good1' => 'Enviada por conexión HTTPS cifrada',
+    'article_security_good2' => 'Procesada solo para quitar el fondo',
+    'article_security_good3' => 'Nunca compartida con terceros',
+    'article_security_good4' => 'Nunca usada para entrenar modelos de IA',
+    'article_security_good5' => 'Eliminada automáticamente tras 30 minutos',
+
+    'bg_article_intro' => 'En un mundo donde cada herramienta "gratis" esconde muros de pago, marcas de agua o recopilación de datos, <strong>RemoveBG</strong> destaca como una herramienta de eliminación de fondo <strong>realmente gratuita</strong>: sin costes ocultos, sin registro y sin marcas de agua. Tus imágenes se procesan de forma segura y se eliminan automáticamente tras 30 minutos.',
+    'bg_article_what_p1' => 'La mayoría de las herramientas de eliminación de fondo cobran entre 5 y 30 USD al mes, te limitan a unas pocas imágenes gratis al día o añaden marcas de agua a los resultados gratuitos. <strong>RemoveBG no hace nada de eso.</strong>',
+    'bg_article_what_p2' => 'Nuestra herramienta usa <strong>segmentación de imagen con IA de última generación</strong> que se ejecuta en nuestros servidores. Subes una imagen, el fondo se quita en segundos y el archivo se elimina permanentemente tras 30 minutos: sin cuenta, sin coste, sin marca de agua.',
+    'bg_article_quote' => '"Un removedor de fondo realmente gratis, sin marca de agua, y que elimina tus imágenes automáticamente tras 30 minutos."',
+    'bg_article_how_p2' => 'El modelo se ejecuta en nuestros servidores con inferencia optimizada de redes neuronales, así obtienes resultados profesionales en segundos sin instalar nada ni descargar un modelo de IA grande en tu dispositivo.',
+    'bg_article_privacy_p1' => 'Tu imagen se sube por una conexión segura y cifrada solo para quitar su fondo. Nunca vendemos, compartimos ni usamos tus imágenes para entrenar IA, y no las conservamos: tanto el original como el resultado se <strong>eliminan automática y permanentemente 30 minutos después del procesamiento</strong>.',
+    'bg_article_privacy_p2' => 'Este enfoque de corta duración, con eliminación por defecto, significa que tus fotos nunca quedan archivadas en nuestros servidores. RemoveBG conserva solo lo necesario y solo durante el tiempo necesario.',
+
+    'bg_comparison_no_upload' => 'Imágenes eliminadas (30 min)',
+
+    // ── Server-model copy corrections ───────────────────────────────────
+    'footer_desc' => 'Un removedor de fondo con IA gratis. Sube una imagen y obtén un PNG transparente en segundos: las imágenes se eliminan automáticamente tras 30 minutos.',
+    'footer_tech' => 'Procesamiento seguro en el servidor. Tus imágenes se eliminan tras 30 minutos.',
+    'jsonld_app_description' => 'Removedor de fondo con IA gratis. Quita el fondo de imágenes JPG, PNG y WebP en segundos: sin marca de agua; imágenes eliminadas tras 30 minutos.',
+    'bg_how_subtitle' => 'Quita el fondo en 3 pasos simples:',
+    'rss_description' => 'Quita el fondo de imágenes gratis con IA. Sin marca de agua, sin registro; imágenes eliminadas tras 30 minutos.',
+    'rss_item1_title' => 'Cómo Quitar el Fondo de una Imagen Gratis con IA',
+    'rss_item1_desc' => 'Una guía completa para quitar el fondo de fotos en segundos: sin marca de agua y sin registro.',
+    'rss_item2_title' => 'PNG Transparente en Un Clic: la Herramienta RemoveBG',
+    'rss_item2_desc' => 'Convierte cualquier foto en un PNG transparente limpio en segundos con nuestra herramienta de IA gratis.',
+    'rss_item3_title' => 'Tu Privacidad: Imágenes Eliminadas Tras 30 Minutos',
+    'rss_item3_desc' => 'Cómo RemoveBG procesa las imágenes de forma segura y las elimina automáticamente tras 30 minutos.',
 ];
