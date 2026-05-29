@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 300" width="400" height="300">
+  <defs>
+    <linearGradient id="bgpr" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#ffe8c2"/>
+      <stop offset="1" stop-color="#f6b26b"/>
+    </linearGradient>
+  </defs>
+  <!-- Cluttered studio backdrop -->
+  <rect width="400" height="300" fill="url(#bgpr)"/>
+  <rect y="225" width="400" height="75" fill="#d98b3f" opacity=".55"/>
+  <circle cx="320" cy="60" r="46" fill="#ffffff" opacity=".22"/>
+  <rect x="40" y="40" width="70" height="70" rx="10" fill="#ffffff" opacity=".15"/>
+  <ellipse cx="200" cy="280" rx="80" ry="14" fill="#000000" opacity=".15"/>
+  <!-- Identical subject -->
+  <g>
+    <rect x="158" y="118" width="84" height="158" rx="16" fill="#2a9d8f"/>
+    <rect x="158" y="118" width="22" height="158" rx="16" fill="#3cc0b0" opacity=".55"/>
+    <rect x="180" y="92" width="40" height="34" fill="#21867a"/>
+    <rect x="182" y="50" width="36" height="48" rx="7" fill="#1d2d44"/>
+    <rect x="170" y="158" width="60" height="74" rx="7" fill="#ffffff" opacity=".92"/>
+    <line x1="184" y1="180" x2="216" y2="180" stroke="#2a9d8f" stroke-width="5" stroke-linecap="round"/>
+    <line x1="184" y1="196" x2="216" y2="196" stroke="#cfcfcf" stroke-width="3" stroke-linecap="round"/>
+    <line x1="184" y1="208" x2="206" y2="208" stroke="#cfcfcf" stroke-width="3" stroke-linecap="round"/>
+  </g>
+</svg>
