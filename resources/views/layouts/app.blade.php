@@ -7,6 +7,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="theme-color" content="#2563EB">
 
+    {{-- Google AdSense --}}
+    <meta name="google-adsense-account" content="ca-pub-2118765549976668">
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2118765549976668"
+        crossorigin="anonymous"></script>
+
     {{-- Analytics placeholder — replace G-XXXXXXXXXX with your own Measurement ID --}}
     <!-- Google tag (gtag.js) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-LXSR8R77XT"></script>
